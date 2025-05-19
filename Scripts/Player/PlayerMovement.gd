@@ -3,6 +3,10 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @export var jump_velocity: float = -400.0
+
+@export var crouch_speed: float = 150.0
+
+var is_crouching: bool = false
 var is_facing_right: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -21,13 +25,19 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = direction * speed
+		velocity.x = direction * (crouch_speed if is_crouching else speed)
 		is_facing_right = direction > 0
 		animated_sprite.flip_h = !is_facing_right
 		play_walk_anim()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		play_idle_anim()
+
+	# Crouch
+	if Input.is_action_pressed("crouch"):
+		is_crouching = true
+	else:
+		is_crouching = false
 
 	move_and_slide()
 

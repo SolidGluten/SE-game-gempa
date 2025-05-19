@@ -77,6 +77,7 @@ physics_interpolation_mode = 1
 script = ExtResource("1_7q7ln")
 speed = 150.0
 jump_velocity = -200.0
+crouch_speed = 75.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 4

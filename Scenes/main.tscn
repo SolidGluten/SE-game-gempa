@@ -86,3 +86,4 @@ tile_set = SubResource("TileSet_2157r")
 
 [node name="Player" parent="." instance=ExtResource("2_ni8e5")]
 position = Vector2(0, 48)
+crouch_speed = null
