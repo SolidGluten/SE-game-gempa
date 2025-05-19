@@ -24,11 +24,6 @@ public partial class PlayerInventory : Node2D
 	[Signal] public delegate void ItemAddedEventHandler(int item);
 	[Signal] public delegate void ItemChangedEventHandler(int item);
 
-  public override void _Ready()
-  {
-			
-	}
-
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionJustPressed("switch_axe"))

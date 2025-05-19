@@ -46,7 +46,6 @@ public partial class PlayerMovement : CharacterBody2D
 
 		Vector2 direction = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
-
 		if (knockTimer > 0)
 		{
 			knockTimer -= (float)delta;
