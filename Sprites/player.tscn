@@ -1,9 +1,30 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbw2fxx2qbybo"]
+[gd_scene load_steps=20 format=3 uid="uid://bbw2fxx2qbybo"]
 
 [ext_resource type="Script" uid="uid://dt7dman1s8xne" path="res://Scripts/Player/PlayerMovement.gd" id="1_7q7ln"]
+[ext_resource type="Texture2D" uid="uid://dehc10in00idi" path="res://Sprites/player-crouch.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://c17vqlkhy4kj3" path="res://Sprites/player-walk.png" id="2_ixlhm"]
 [ext_resource type="Texture2D" uid="uid://bkqnaatoqs1qe" path="res://Sprites/player-jump2.png" id="3_byksy"]
 [ext_resource type="Script" uid="uid://dl1uiy215lk4e" path="res://Scripts/Player/PlayerInteraction.cs" id="7_lbcv0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0c5s"]
 atlas = ExtResource("2_ixlhm")
@@ -31,6 +52,31 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o0d3e"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}],
+"loop": true,
+"name": &"crouch_idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c0c5s")
@@ -77,13 +123,12 @@ physics_interpolation_mode = 1
 script = ExtResource("1_7q7ln")
 speed = 150.0
 jump_velocity = -200.0
-crouch_speed = 75.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 4
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o0d3e")
-animation = &"walk"
+animation = &"crouch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
