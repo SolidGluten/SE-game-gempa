@@ -25,8 +25,6 @@ func _physics_process(delta: float) -> void:
 	# Get current speed
 	current_speed = crouch_speed if is_crouching else speed
 
-	print(current_speed)
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
