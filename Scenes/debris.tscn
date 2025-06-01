@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmd1kutmw1gnb"]
+[gd_scene load_steps=5 format=3 uid="uid://dmd1kutmw1gnb"]
 
 [ext_resource type="Texture2D" uid="uid://wkblla5niisb" path="res://icon.svg" id="1_el654"]
+[ext_resource type="Script" uid="uid://pomdiyoxbf0i" path="res://Scripts/Hurtable/Hurtable.gd" id="2_cavlc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cavlc"]
-size = Vector2(128, 126)
+size = Vector2(26, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imx3m"]
+size = Vector2(22, 22)
 
 [node name="Debris" type="RigidBody2D"]
+lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_el654")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("2_cavlc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_cavlc")
+debug_color = Color(0.750839, 0, 0.103786, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_imx3m")

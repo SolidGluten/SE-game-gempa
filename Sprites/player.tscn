@@ -1,11 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bbw2fxx2qbybo"]
+[gd_scene load_steps=20 format=3 uid="uid://bbw2fxx2qbybo"]
 
 [ext_resource type="Script" uid="uid://dt7dman1s8xne" path="res://Scripts/Player/PlayerMovement.gd" id="1_7q7ln"]
 [ext_resource type="Texture2D" uid="uid://dehc10in00idi" path="res://Sprites/player-crouch.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://c17vqlkhy4kj3" path="res://Sprites/player-walk.png" id="2_ixlhm"]
 [ext_resource type="Texture2D" uid="uid://bkqnaatoqs1qe" path="res://Sprites/player-jump2.png" id="3_byksy"]
 [ext_resource type="Script" uid="uid://5w3a8rt53snh" path="res://Scripts/Camera/ScreenShake.gd" id="5_eksx6"]
-[ext_resource type="Script" uid="uid://dl1uiy215lk4e" path="res://Scripts/Player/PlayerInteraction.cs" id="7_lbcv0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("2_fkybt")
@@ -142,7 +141,6 @@ position_smoothing_speed = 10.0
 script = ExtResource("5_eksx6")
 
 [node name="Head" type="Node2D" parent="."]
-script = ExtResource("7_lbcv0")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="Head"]
 shape = SubResource("RectangleShape2D_8y11f")
