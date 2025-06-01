@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmd1kutmw1gnb"]
 
 [ext_resource type="Texture2D" uid="uid://wkblla5niisb" path="res://icon.svg" id="1_el654"]
-[ext_resource type="Script" uid="uid://pomdiyoxbf0i" path="res://Scripts/Hurtable/Hurtable.gd" id="2_cavlc"]
+[ext_resource type="Script" uid="uid://be33qm5lj3qy2" path="res://Scripts/Hurtable/Debris.gd" id="2_cavlc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cavlc"]
 size = Vector2(26, 26)
@@ -9,7 +9,7 @@ size = Vector2(26, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imx3m"]
 size = Vector2(22, 22)
 
-[node name="Debris" type="RigidBody2D"]
+[node name="Debris" type="RigidBody2D" groups=["debris"]]
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

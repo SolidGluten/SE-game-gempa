@@ -23,6 +23,12 @@ playerHealth="*res://Scripts/Player/PlayerHealth.gd"
 
 project/assembly_name="gempa-bumi"
 
+[global_group]
+
+player=""
+debris=""
+floor=""
+
 [input]
 
 move_left={
