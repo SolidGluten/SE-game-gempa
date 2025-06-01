@@ -1,11 +1,23 @@
 class_name Debris
 extends Hurtable
 
+@export var life_time: float = 2.0
+
+func _process(delta: float) -> void:
+	life_time -= delta
+
+	if life_time <= 0:
+		self.get_parent().queue_free()
+
+
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	super(body_rid, body, body_shape_index, local_shape_index)
 
 	if body.is_in_group("player"):
-		queue_free()
+		self.get_parent().queue_free()
+
+	if body.is_in_group("furniture"):
+		self.get_parent().queue_free()
 
 	if body is TileMapLayer:
 		var tilemap = body
@@ -14,4 +26,3 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, 
 
 		if tile_data.get_custom_data("is_floor"):
 			self.get_parent().queue_free()
-

@@ -118,7 +118,7 @@ height = 26.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y11f"]
 size = Vector2(0.5, 2)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 physics_interpolation_mode = 1
 script = ExtResource("1_7q7ln")
 speed = 150.0

@@ -17,6 +17,8 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_el654")
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("2_cavlc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]

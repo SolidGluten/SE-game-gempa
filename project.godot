@@ -28,6 +28,7 @@ project/assembly_name="gempa-bumi"
 player=""
 debris=""
 floor=""
+furniture=""
 
 [input]
 
@@ -78,5 +79,6 @@ spawn_debris_dev={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

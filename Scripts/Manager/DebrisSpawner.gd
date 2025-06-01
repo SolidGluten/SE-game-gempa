@@ -36,14 +36,15 @@ func start_spawn_timer() -> void:
 	if camera: camera.start_shake(10.0, spawn_duration)
 
 func spawn_debris() -> void:
+	
 	if not camera:
 		print("Camera Not Found!")
 		return
-		
+
 	var debris_instance = debris_scene.instantiate()
 	get_tree().current_scene.add_child(debris_instance)
 	
-	# Get viewport
+	# Get viewport and camera
 	var viewport_size = get_viewport().size
 
 	var top_left = Vector2(0, 0)
@@ -57,4 +58,4 @@ func spawn_debris() -> void:
 	var spawn_pos = camera.get_screen_transform().affine_inverse() * Vector2(spawn_x, spawn_y)
 	spawn_pos.y -= spawn_margin
 
-	debris_instance.global_position = spawn_pos    
+	debris_instance.global_position = spawn_pos + camera.global_position
