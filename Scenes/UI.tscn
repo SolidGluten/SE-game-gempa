@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcxgxf8qeioqg"]
+[gd_scene load_steps=4 format=3 uid="uid://dcxgxf8qeioqg"]
 
-[ext_resource type="Script" uid="uid://lggvblff4k5y" path="res://Scripts/UI/UIManager.cs" id="1_70hco"]
+[ext_resource type="Script" uid="uid://delxp323ma44x" path="res://Scripts/UI/UImanager.gd" id="1_dewlx"]
+[ext_resource type="Texture2D" uid="uid://d1f7f317j83ke" path="res://Sprites/heart/heart_full.png" id="3_dewlx"]
 [ext_resource type="PackedScene" uid="uid://ddhqvxohaf2mq" path="res://Scenes/guide_UI.tscn" id="6_88n7v"]
 
 [node name="Main UI" type="Control"]
@@ -10,7 +11,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_70hco")
+script = ExtResource("1_dewlx")
 
 [node name="GuideContainer" parent="." instance=ExtResource("6_88n7v")]
 layout_mode = 1
+
+[node name="HealthContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0217014
+anchor_top = 0.0277778
+anchor_right = 0.141493
+anchor_bottom = 0.0987654
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 146.0
+offset_bottom = 59.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 2

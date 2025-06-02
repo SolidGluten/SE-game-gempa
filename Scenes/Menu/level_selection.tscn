@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj7kp35b0blsy"]
+
+[ext_resource type="Script" uid="uid://0lahq8158ab2" path="res://Scripts/UI/SelectLevelButton.gd" id="1_xd8iy"]
+
+[node name="LevelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -112.0
+offset_right = 96.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select Level"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Level 1"
+script = ExtResource("1_xd8iy")
+level_path = "res://Scenes/Level/level1.tscn"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Level 2"
+script = ExtResource("1_xd8iy")
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Level 3"
+script = ExtResource("1_xd8iy")
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Level 4"
+script = ExtResource("1_xd8iy")
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Level 5"
+script = ExtResource("1_xd8iy")
+
+[node name="Button6" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Level 6"
+script = ExtResource("1_xd8iy")
+
+[node name="Button7" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Level 7
+"
+script = ExtResource("1_xd8iy")
+
+[node name="Button8" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Level 8"
+script = ExtResource("1_xd8iy")

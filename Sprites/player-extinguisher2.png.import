@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vxo6cpebfusp"
-path="res://.godot/imported/player-extinguisher2.png-b77963fafec0446ce5c773da1fbbe9cf.ctex"
+path="res://.godot/imported/player-extinguisher2.png-1cd021de9c47198148d3a41cb362c588.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player-extinguisher2.png"
-dest_files=["res://.godot/imported/player-extinguisher2.png-b77963fafec0446ce5c773da1fbbe9cf.ctex"]
+source_file="res://Sprites/player-extinguisher2.png"
+dest_files=["res://.godot/imported/player-extinguisher2.png-1cd021de9c47198148d3a41cb362c588.ctex"]
 
 [params]
 

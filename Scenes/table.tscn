@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dr37mkmg4efa6" path="res://Sprites/table.png" id="1_ix8et"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix8et"]
-size = Vector2(52, 5)
+size = Vector2(52, 13)
 
 [node name="Table" type="StaticBody2D" groups=["furniture"]]
 collision_layer = 2
@@ -15,5 +15,5 @@ scale = Vector2(2.4, 2.4)
 texture = ExtResource("1_ix8et")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 14.5)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_ix8et")
