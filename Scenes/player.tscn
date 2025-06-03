@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbw2fxx2qbybo"]
+[gd_scene load_steps=22 format=3 uid="uid://bbw2fxx2qbybo"]
 
 [ext_resource type="Script" uid="uid://dt7dman1s8xne" path="res://Scripts/Player/PlayerMovement.gd" id="1_7q7ln"]
 [ext_resource type="Texture2D" uid="uid://dehc10in00idi" path="res://Sprites/player-crouch.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://c17vqlkhy4kj3" path="res://Sprites/player-walk.png" id="2_ixlhm"]
 [ext_resource type="Texture2D" uid="uid://bkqnaatoqs1qe" path="res://Sprites/player-jump2.png" id="3_byksy"]
 [ext_resource type="Script" uid="uid://5w3a8rt53snh" path="res://Scripts/Camera/ScreenShake.gd" id="5_eksx6"]
+[ext_resource type="Script" uid="uid://dw8t3swwg6gv3" path="res://Scripts/Player/PlayerInteraction.gd" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("2_fkybt")
@@ -115,6 +116,9 @@ animations = [{
 radius = 8.0
 height = 26.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(11, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y11f"]
 size = Vector2(0.5, 2)
 
@@ -126,7 +130,7 @@ crouch_speed = 50.0
 jump_velocity = -200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 4
+z_index = 3
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o0d3e")
 animation = &"crouch"
@@ -139,6 +143,17 @@ shape = SubResource("CapsuleShape2D_u3btv")
 zoom = Vector2(2.7, 2.7)
 position_smoothing_speed = 10.0
 script = ExtResource("5_eksx6")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 4
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("6_x3wgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_fkybt")
+debug_color = Color(0.0246351, 0.343599, 1, 0.42)
 
 [node name="Head" type="Node2D" parent="."]
 
