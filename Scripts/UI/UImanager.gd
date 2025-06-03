@@ -4,6 +4,8 @@ extends Node
 const heart_full_path = "res://Sprites/heart/heart_full.png"
 const heart_empty_path = "res://Sprites/heart/heart_empty.png"
 
+@onready var death_screen = $DeathScreen
+
 var heart_count = 3
 var current_health = 2
 
@@ -11,6 +13,9 @@ var heart_list: Array[TextureRect] = []
 
 func _ready() -> void:
     playerHealth.health_changed.connect(self.sync_health_UI)
+    playerHealth.dead.connect(self.enable_death_screen)
+
+    death_screen.visible = false
 
     var children = $HealthContainer.get_children()
     for child in children:
@@ -29,3 +34,6 @@ func sync_health_UI(health: int) -> void:
 
 func _exit_tree() -> void:
     playerHealth.health_changed.disconnect(self.sync_health_UI)
+
+func enable_death_screen() -> void:
+    death_screen.visible = true

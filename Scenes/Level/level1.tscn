@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://clshowh5jarr6"]
 
-[ext_resource type="PackedScene" uid="uid://dcxgxf8qeioqg" path="res://Scenes/UI.tscn" id="1_1rc3o"]
+[ext_resource type="PackedScene" uid="uid://dcxgxf8qeioqg" path="res://Scenes/UI/UI.tscn" id="1_1rc3o"]
 [ext_resource type="Texture2D" uid="uid://dciboji3vtvym" path="res://Sprites/LivingRoom.png" id="2_cwg34"]
 [ext_resource type="PackedScene" uid="uid://bbw2fxx2qbybo" path="res://Scenes/player.tscn" id="3_rngln"]
 [ext_resource type="Script" uid="uid://bc653wym1dkst" path="res://Scripts/Manager/DebrisSpawner.gd" id="4_fw7an"]

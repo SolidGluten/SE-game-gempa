@@ -1,8 +1,8 @@
 class_name LevelManager
 extends Node
 
-func _ready() -> void:
-    playerHealth.dead.connect(self.reset_current_scene)
+# func _ready() -> void:
+    # playerHealth.dead.connect(self.reset_current_scene)
 
 func reset_current_scene() -> void:
     get_tree().reload_current_scene()

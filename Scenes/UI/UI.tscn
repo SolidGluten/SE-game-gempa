@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcxgxf8qeioqg"]
+[gd_scene load_steps=5 format=3 uid="uid://dcxgxf8qeioqg"]
 
 [ext_resource type="Script" uid="uid://delxp323ma44x" path="res://Scripts/UI/UImanager.gd" id="1_dewlx"]
+[ext_resource type="PackedScene" uid="uid://fyjad1d56ayn" path="res://Scenes/UI/death_screen.tscn" id="3_b83rk"]
 [ext_resource type="Texture2D" uid="uid://d1f7f317j83ke" path="res://Sprites/heart/heart_full.png" id="3_dewlx"]
 [ext_resource type="PackedScene" uid="uid://ddhqvxohaf2mq" path="res://Scenes/guide_UI.tscn" id="6_88n7v"]
 
@@ -14,6 +15,9 @@ grow_vertical = 2
 script = ExtResource("1_dewlx")
 
 [node name="GuideContainer" parent="." instance=ExtResource("6_88n7v")]
+layout_mode = 1
+
+[node name="DeathScreen" parent="." instance=ExtResource("3_b83rk")]
 layout_mode = 1
 
 [node name="HealthContainer" type="HBoxContainer" parent="."]

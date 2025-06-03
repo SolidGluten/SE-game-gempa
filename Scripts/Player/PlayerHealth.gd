@@ -10,6 +10,10 @@ signal dead
 func _ready() -> void:
     current_health = max_health
 
+func _process(_delta: float) -> void:
+    if Input.is_action_just_pressed("damage_player_dev"):
+        hurt(1)
+
 func hurt(dmg: int) -> void: 
     current_health = max(0, current_health - dmg)
     emit_signal("health_changed", current_health)
