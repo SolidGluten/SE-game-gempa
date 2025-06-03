@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcxgxf8qeioqg"]
+[gd_scene load_steps=6 format=3 uid="uid://dcxgxf8qeioqg"]
 
 [ext_resource type="Script" uid="uid://delxp323ma44x" path="res://Scripts/UI/UImanager.gd" id="1_dewlx"]
 [ext_resource type="PackedScene" uid="uid://fyjad1d56ayn" path="res://Scenes/UI/death_screen.tscn" id="3_b83rk"]
 [ext_resource type="Texture2D" uid="uid://d1f7f317j83ke" path="res://Sprites/heart/heart_full.png" id="3_dewlx"]
+[ext_resource type="Texture2D" uid="uid://dppg0rot1vqxe" path="res://Sprites/alert-sign3.png" id="5_oqha6"]
 [ext_resource type="PackedScene" uid="uid://ddhqvxohaf2mq" path="res://Scenes/guide_UI.tscn" id="6_88n7v"]
 
 [node name="Main UI" type="Control"]
@@ -47,3 +48,15 @@ expand_mode = 2
 layout_mode = 2
 texture = ExtResource("3_dewlx")
 expand_mode = 2
+
+[node name="AlertIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 42.0
+offset_right = 42.0
+offset_bottom = 126.0
+grow_horizontal = 2
+texture = ExtResource("5_oqha6")
