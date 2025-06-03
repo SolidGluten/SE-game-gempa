@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 playerHealth="*res://Scripts/Player/PlayerHealth.gd"
 levelManager="*res://Scripts/Manager/LevelManager.gd"
+playerInventory="*res://Scripts/Player/PlayerInventory.gd"
 
 [dotnet]
 
