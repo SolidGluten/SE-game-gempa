@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://te4olsnr6ut"]
+
+[ext_resource type="Script" uid="uid://1am1f18w62oj" path="res://Scripts/Particle/DestroyParticle.gd" id="1_8l4f0"]
+
+[sub_resource type="Gradient" id="Gradient_g4u4t"]
+offsets = PackedFloat32Array(0.00719424, 1)
+colors = PackedColorArray(0.243137, 0.211765, 0.207843, 0.941176, 0.447059, 0.384314, 0.368627, 0.917647)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3ddtn"]
+gradient = SubResource("Gradient_g4u4t")
+width = 1
+
+[node name="PotParticle" type="CPUParticles2D"]
+z_index = 2
+emitting = false
+amount = 20
+texture = SubResource("GradientTexture1D_3ddtn")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 120.0
+initial_velocity_max = 150.0
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+script = ExtResource("1_8l4f0")

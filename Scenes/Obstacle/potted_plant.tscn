@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b03fc3eixrrpw"]
+[gd_scene load_steps=6 format=3 uid="uid://b03fc3eixrrpw"]
 
 [ext_resource type="Script" uid="uid://dfb6fsswpp4k2" path="res://Scripts/Hurtable/FallingHazard.gd" id="1_g4u4t"]
-[ext_resource type="Texture2D" uid="uid://b6ehhlro6y2bj" path="res://Sprites/icon.svg" id="1_i0n0o"]
+[ext_resource type="Texture2D" uid="uid://cwevslii73qww" path="res://Sprites/flower.png" id="2_g4u4t"]
 [ext_resource type="Script" uid="uid://be33qm5lj3qy2" path="res://Scripts/Hurtable/Debris.gd" id="3_g4u4t"]
+[ext_resource type="PackedScene" uid="uid://cw1sm00yjd4aq" path="res://Scenes/Particles/pot_particle.tscn" id="4_3ddtn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y05t"]
-size = Vector2(12, 12)
+size = Vector2(14, 14)
 
 [node name="FallingObject" type="RigidBody2D" groups=["debris"]]
 z_index = 3
@@ -13,13 +14,15 @@ lock_rotation = true
 script = ExtResource("1_g4u4t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_i0n0o")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_g4u4t")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("3_g4u4t")
+enable_life_time = false
+particle_effect = ExtResource("4_3ddtn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_1y05t")

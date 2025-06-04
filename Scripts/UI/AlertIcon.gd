@@ -4,6 +4,7 @@ extends Node
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
+	self.visible = false  # Start with the icon hidden
 	timer.timeout.connect(self.blink)
 
 func blink() -> void:
