@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwevslii73qww"
-path="res://.godot/imported/flower.png-ef939544783b10f3076ee4b28c048b9d.ctex"
+uid="uid://eaq88w7rd3u"
+path="res://.godot/imported/key.png-3ccde33d2a94022245122da6de6c4b7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/flower.png"
-dest_files=["res://.godot/imported/flower.png-ef939544783b10f3076ee4b28c048b9d.ctex"]
+source_file="res://Sprites/furnitures/key.png"
+dest_files=["res://.godot/imported/key.png-3ccde33d2a94022245122da6de6c4b7f.ctex"]
 
 [params]
 

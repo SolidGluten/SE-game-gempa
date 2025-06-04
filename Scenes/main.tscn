@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dciboji3vtvym" path="res://Sprites/LivingRoom.png" id="5_5g2ml"]
 [ext_resource type="PackedScene" uid="uid://dmd1kutmw1gnb" path="res://Scenes/Obstacle/debris.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dl0qdccaqguyf" path="res://Scenes/Furniture/table.tscn" id="6_21xkr"]
-[ext_resource type="PackedScene" uid="uid://b03fc3eixrrpw" path="res://Scenes/Obstacle/potted_plant.tscn" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://did8opg8q8agh" path="res://Scenes/Obstacle/fall_trigger.tscn" id="9_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://bnnum6wj1jwa" path="res://Scenes/Obstacle/vase.tscn" id="11_6iyac"]
 [ext_resource type="PackedScene" uid="uid://du07ki0ccyrnj" path="res://Scenes/key.tscn" id="11_d1ilt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbbtj"]
@@ -159,9 +159,6 @@ debris_scene = ExtResource("5_kry3j")
 [node name="Table" parent="." instance=ExtResource("6_21xkr")]
 position = Vector2(38, 28)
 
-[node name="FallingObject" parent="." instance=ExtResource("8_344ge")]
-position = Vector2(-101, 11)
-
 [node name="FallTrigger" parent="." instance=ExtResource("9_ynf5e")]
 position = Vector2(1, 0)
 
@@ -172,4 +169,8 @@ next_level_path = "res://Scenes/Level/level1.tscn"
 [node name="Key" parent="." instance=ExtResource("11_d1ilt")]
 position = Vector2(-55, 45)
 
-[connection signal="body_entered" from="FallTrigger" to="FallingObject" method="fall"]
+[node name="Vase" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(-101, 10)
+mass = 2.0
+
+[connection signal="body_entered" from="FallTrigger" to="Vase" method="fall"]
