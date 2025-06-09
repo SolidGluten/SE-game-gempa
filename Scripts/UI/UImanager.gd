@@ -5,12 +5,12 @@ const heart_full_path = "res://Sprites/heart/heart_full.png"
 const heart_empty_path = "res://Sprites/heart/heart_empty.png"
 
 @onready var death_screen = $DeathScreen
+@onready var win_screen = $WinScreen
 @onready var alert_icon = $AlertIcon
 @export var quack_spawner: Node = null
 
 var heart_count = 3
 var current_health = 2
-
 var heart_list: Array[TextureRect] = []
 
 func _ready() -> void:
@@ -18,6 +18,7 @@ func _ready() -> void:
 	playerHealth.dead.connect(self.enable_death_screen)
 
 	death_screen.visible = false
+	win_screen.visible = false
 
 	var children = $HealthContainer.get_children()
 	for child in children:
@@ -44,3 +45,6 @@ func _exit_tree() -> void:
 
 func enable_death_screen() -> void:
 	death_screen.visible = true
+
+func enable_win_screen() -> void:
+	win_screen.visible = true

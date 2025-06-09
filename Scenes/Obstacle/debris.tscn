@@ -1,19 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmd1kutmw1gnb"]
 
-[ext_resource type="Texture2D" uid="uid://wkblla5niisb" path="res://icon.svg" id="1_el654"]
+[ext_resource type="Texture2D" uid="uid://b2fg5t8ja3agw" path="res://Sprites/rock.png" id="1_h3owg"]
 [ext_resource type="Script" uid="uid://be33qm5lj3qy2" path="res://Scripts/Hurtable/Debris.gd" id="2_cavlc"]
 [ext_resource type="PackedScene" uid="uid://te4olsnr6ut" path="res://Scenes/Particles/debris_particle.tscn" id="3_h3owg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cavlc"]
-size = Vector2(26, 26)
+size = Vector2(24, 24)
 
 [node name="Debris" type="RigidBody2D" groups=["debris"]]
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 3
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_el654")
+texture = ExtResource("1_h3owg")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 3

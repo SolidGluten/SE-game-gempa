@@ -9,7 +9,9 @@ func reset_current_scene() -> void:
 
 func load_level(level_path) -> void:
     var scene := load(level_path)
-    if scene: get_tree().change_scene_to_packed(scene)
+    if scene: 
+        get_tree().change_scene_to_packed(scene)
+        gameManager.current_state = gameManager.GameState.PLAYING
     else: printerr("Loaded scene is not found.")
 
 func _exit_tree() -> void:

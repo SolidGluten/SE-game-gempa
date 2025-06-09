@@ -49,11 +49,11 @@ func _process(delta: float) -> void:
 		quake_timer = quake_duration
 		timer.stop()
 
-	# if Input.is_action_just_pressed("spawn_debris_dev"):
-	# 	if timer.is_stopped():
-	# 		start_spawn_timer()
-	# 	else:
-	# 		timer.stop()
+	if Input.is_action_just_pressed("spawn_debris_dev"):
+		if timer.is_stopped():
+			start_spawn_timer()
+		else:
+			timer.stop()
 		
 func start_spawn_timer() -> void:
 	timer.start()

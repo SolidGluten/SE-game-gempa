@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6wxrbcrl3yfv"]
+
+[ext_resource type="Texture2D" uid="uid://cmc4bkqo7yq7m" path="res://Sprites/shelf.png" id="1_ndc05"]
+
+[node name="Shelf" type="Node2D"]
+z_index = 2
+
+[node name="Node2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ndc05")
