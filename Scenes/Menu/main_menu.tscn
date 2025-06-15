@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://njksg1atxnck"]
+[gd_scene load_steps=8 format=3 uid="uid://njksg1atxnck"]
 
 [ext_resource type="Script" uid="uid://0lahq8158ab2" path="res://Scripts/UI/SelectLevelButton.gd" id="1_bkwd7"]
+[ext_resource type="FontFile" uid="uid://by6jbbvfepb1y" path="res://Fonts/BridgeParapet.ttf" id="2_7jtkx"]
+[ext_resource type="Texture2D" uid="uid://dtq50jo7vjrxb" path="res://Sprites/UI/earthquake.png" id="2_tself"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmek6"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.140447, 0.140447, 0.140447, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab7fb"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.302256, 0.190664, 0.101507, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jtkx"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6, 0.360784, 0.101961, 0.568627)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_vmek6"]
+Button/styles/disabled = SubResource("StyleBoxFlat_vmek6")
+Button/styles/hover = SubResource("StyleBoxFlat_ab7fb")
+Button/styles/normal = SubResource("StyleBoxFlat_7jtkx")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,46 +50,124 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="RichTextLabel" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = -20.0
-offset_right = 96.0
-offset_bottom = 20.0
+offset_left = -579.0
+offset_top = -380.0
+offset_right = 861.0
+offset_bottom = 644.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Welcome"
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_tself")
+
+[node name="Title2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -160.0
+offset_right = 143.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_7jtkx")
+theme_override_font_sizes/normal_font_size = 64
+text = "Select Level"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = 18.0
-offset_right = 50.0
-offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 4
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
-text = "Play "
+theme = SubResource("Theme_vmek6")
+theme_override_fonts/font = ExtResource("2_7jtkx")
+theme_override_font_sizes/font_size = 48
+text = "Level 1"
 script = ExtResource("1_bkwd7")
 level_path = "res://Scenes/Level/level1.tscn"
 
-[node name="LevelButton" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="GridContainer"]
 layout_mode = 2
-text = "Select Level"
+theme = SubResource("Theme_vmek6")
+theme_override_fonts/font = ExtResource("2_7jtkx")
+theme_override_font_sizes/font_size = 48
+text = "Level 2"
 script = ExtResource("1_bkwd7")
-level_path = "res://Scenes/Menu/level_selection.tscn"
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_vmek6")
+theme_override_fonts/font = ExtResource("2_7jtkx")
+theme_override_font_sizes/font_size = 48
+text = "Level 3"
+icon_alignment = 1
+script = ExtResource("1_bkwd7")
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_vmek6")
+theme_override_fonts/font = ExtResource("2_7jtkx")
+theme_override_font_sizes/font_size = 48
+text = "Level 4"
+script = ExtResource("1_bkwd7")
+locked = true
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_vmek6")
+theme_override_fonts/font = ExtResource("2_7jtkx")
+theme_override_font_sizes/font_size = 48
+text = "Level 5"
+script = ExtResource("1_bkwd7")
+locked = true
+
+[node name="Button6" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_vmek6")
+theme_override_fonts/font = ExtResource("2_7jtkx")
+theme_override_font_sizes/font_size = 48
+text = "Level 6"
+script = ExtResource("1_bkwd7")
+locked = true
+
+[node name="Button7" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_vmek6")
+theme_override_fonts/font = ExtResource("2_7jtkx")
+theme_override_font_sizes/font_size = 48
+text = "Level 7
+"
+script = ExtResource("1_bkwd7")
+locked = true
+
+[node name="Button8" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_vmek6")
+theme_override_fonts/font = ExtResource("2_7jtkx")
+theme_override_font_sizes/font_size = 48
+text = "Level 8"
+script = ExtResource("1_bkwd7")
+locked = true

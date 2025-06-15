@@ -1,0 +1,136 @@
+[gd_scene load_steps=15 format=4 uid="uid://da4aluo63ge1q"]
+
+[ext_resource type="PackedScene" uid="uid://dcxgxf8qeioqg" path="res://Scenes/UI/UI.tscn" id="1_8wwbb"]
+[ext_resource type="Texture2D" uid="uid://dciboji3vtvym" path="res://Sprites/LivingRoom.png" id="2_dbmgw"]
+[ext_resource type="PackedScene" uid="uid://bbw2fxx2qbybo" path="res://Scenes/player.tscn" id="3_bqynb"]
+[ext_resource type="Script" uid="uid://bc653wym1dkst" path="res://Scripts/Manager/QuakeSpawner.gd" id="4_4u611"]
+[ext_resource type="PackedScene" uid="uid://dmd1kutmw1gnb" path="res://Scenes/Obstacle/debris.tscn" id="5_3bxm0"]
+[ext_resource type="PackedScene" uid="uid://dl0qdccaqguyf" path="res://Scenes/Furniture/table.tscn" id="6_f286b"]
+[ext_resource type="PackedScene" uid="uid://fjw8a7o00riv" path="res://Scenes/exit_door.tscn" id="7_6fscc"]
+[ext_resource type="PackedScene" uid="uid://b03fc3eixrrpw" path="res://Scenes/Obstacle/potted_plant.tscn" id="8_qmq3x"]
+[ext_resource type="PackedScene" uid="uid://b7gum4meu7pun" path="res://Scenes/Obstacle/picture.tscn" id="9_4hy2w"]
+[ext_resource type="PackedScene" uid="uid://did8opg8q8agh" path="res://Scenes/Obstacle/fall_trigger.tscn" id="10_b5b3k"]
+[ext_resource type="PackedScene" uid="uid://b6wxrbcrl3yfv" path="res://Scenes/Furniture/shelf.tscn" id="11_d44tt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbbtj"]
+texture = ExtResource("2_dbmgw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0/custom_data_0 = true
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0/custom_data_0 = true
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0/custom_data_0 = true
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0/custom_data_0 = true
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ox6lp"]
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "is_floor"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_dbbtj")
+
+[sub_resource type="TileSet" id="TileSet_2157r"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Main UI" parent="CanvasLayer" node_paths=PackedStringArray("quack_spawner") instance=ExtResource("1_8wwbb")]
+offset_left = 13.0
+offset_right = 13.0
+quack_spawner = NodePath("../../QuakeSpawner")
+
+[node name="TilemapCollection" type="Node" parent="."]
+
+[node name="CollisionLayer" type="TileMapLayer" parent="TilemapCollection"]
+texture_filter = 1
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AADz/wQAAQAAAAMAAAD0/wQAAQABAAMAAAD1/wQAAQABAAMAAAD2/wQAAQABAAMAAAD3/wQAAQABAAMAAAD4/wQAAQABAAMAAAD5/wQAAQABAAMAAAD6/wQAAQABAAMAAAD7/wQAAQABAAMAAAD8/wQAAQABAAMAAAD9/wQAAQABAAMAAAD+/wQAAQABAAMAAAD//wQAAQABAAMAAAAAAAQAAQABAAMAAAABAAQAAQABAAMAAAACAAQAAQABAAMAAAADAAQAAQABAAMAAAAEAAQAAQABAAMAAAAFAAQAAQABAAMAAAAGAAQAAQABAAMAAAAHAAQAAQABAAMAAAAIAAQAAQABAAMAAAAJAAQAAQABAAMAAAAKAAQAAQABAAMAAAALAAQAAQABAAMAAAAMAAQAAQACAAMAAADz/wMAAQAAAAIAAAAMAAMAAQACAAIAAAAMAAIAAQACAAEAAAAMAAEAAQACAAEAAAAMAAAAAQACAAEAAADz/wIAAQAAAAEAAADz/wEAAQAAAAEAAADz/wAAAQAAAAEAAADz////AQAAAAEAAAAMAP//AQACAAEAAAD0/wMAAQABAAIAAAD1/wMAAQABAAIAAAD2/wMAAQABAAIAAAD3/wMAAQABAAIAAAD4/wMAAQABAAIAAAD5/wMAAQABAAIAAAD6/wMAAQABAAIAAAD7/wMAAQABAAIAAAD8/wMAAQABAAIAAAD9/wMAAQABAAIAAAD+/wMAAQABAAIAAAD//wMAAQABAAIAAAAAAAMAAQABAAIAAAABAAMAAQABAAIAAAACAAMAAQABAAIAAAADAAMAAQABAAIAAAAEAAMAAQABAAIAAAAFAAMAAQABAAIAAAAGAAMAAQABAAIAAAAHAAMAAQABAAIAAAAIAAMAAQABAAIAAAAJAAMAAQABAAIAAAAKAAMAAQABAAIAAAALAAMAAQABAAIAAAD0/wAAAQABAAEAAAD0/wEAAQABAAEAAAD0/wIAAQABAAEAAAD1/wAAAQABAAEAAAD1/wEAAQABAAEAAAD1/wIAAQABAAEAAAD2/wAAAQABAAEAAAD2/wEAAQABAAEAAAD2/wIAAQABAAEAAAD3/wAAAQABAAEAAAD3/wEAAQABAAEAAAD3/wIAAQABAAEAAAD4/wAAAQABAAEAAAD4/wEAAQABAAEAAAD4/wIAAQABAAEAAAD5/wAAAQABAAEAAAD5/wEAAQABAAEAAAD5/wIAAQABAAEAAAD6/wAAAQABAAEAAAD6/wEAAQABAAEAAAD6/wIAAQABAAEAAAD7/wAAAQABAAEAAAD7/wEAAQABAAEAAAD7/wIAAQABAAEAAAD8/wAAAQABAAEAAAD8/wEAAQABAAEAAAD8/wIAAQABAAEAAAD9/wAAAQABAAEAAAD9/wEAAQABAAEAAAD9/wIAAQABAAEAAAD+/wAAAQABAAEAAAD+/wEAAQABAAEAAAD+/wIAAQABAAEAAAD//wAAAQABAAEAAAD//wEAAQABAAEAAAD//wIAAQABAAEAAAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAABAAAAAQABAAEAAAABAAEAAQABAAEAAAABAAIAAQABAAEAAAACAAAAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAADAAAAAQABAAEAAAADAAEAAQABAAEAAAADAAIAAQABAAEAAAAEAAAAAQABAAEAAAAEAAEAAQABAAEAAAAEAAIAAQABAAEAAAAFAAAAAQABAAEAAAAFAAEAAQABAAEAAAAFAAIAAQABAAEAAAAGAAAAAQABAAEAAAAGAAEAAQABAAEAAAAGAAIAAQABAAEAAAAHAAAAAQABAAEAAAAHAAEAAQABAAEAAAAHAAIAAQABAAEAAAAIAAAAAQABAAEAAAAIAAEAAQABAAEAAAAIAAIAAQABAAEAAAAJAAAAAQABAAEAAAAJAAEAAQABAAEAAAAJAAIAAQABAAEAAAAKAAAAAQABAAEAAAAKAAEAAQABAAEAAAAKAAIAAQABAAEAAAALAAAAAQABAAEAAAALAAEAAQABAAEAAAALAAIAAQABAAEAAADz//7/AQAAAAAAAAAMAP7/AQACAAAAAAD0//7/AQABAAAAAAD1//7/AQABAAAAAAD2//7/AQABAAAAAAD3//7/AQABAAAAAAD4//7/AQABAAAAAAD5//7/AQABAAAAAAD6//7/AQABAAAAAAD7//7/AQABAAAAAAD8//7/AQABAAAAAAD9//7/AQABAAAAAAD+//7/AQABAAAAAAD///7/AQABAAAAAAAAAP7/AQABAAAAAAABAP7/AQABAAAAAAACAP7/AQABAAAAAAADAP7/AQABAAAAAAAEAP7/AQABAAAAAAAFAP7/AQABAAAAAAAGAP7/AQABAAAAAAAHAP7/AQABAAAAAAAIAP7/AQABAAAAAAAJAP7/AQABAAAAAAAKAP7/AQABAAAAAAALAP7/AQABAAAAAAD0////AQABAAEAAAD1////AQABAAEAAAD2////AQABAAEAAAD3////AQABAAEAAAD4////AQABAAEAAAD5////AQABAAEAAAD6////AQABAAEAAAD7////AQABAAEAAAD8////AQABAAEAAAD9////AQABAAEAAAD+////AQABAAEAAAD/////AQABAAEAAAAAAP//AQABAAEAAAABAP//AQABAAEAAAACAP//AQABAAEAAAADAP//AQABAAEAAAAEAP//AQABAAEAAAAFAP//AQABAAEAAAAGAP//AQABAAEAAAAHAP//AQABAAEAAAAIAP//AQABAAEAAAAJAP//AQABAAEAAAAKAP//AQABAAEAAAALAP//AQABAAEAAAA=")
+tile_set = SubResource("TileSet_ox6lp")
+
+[node name="BackgroundLayer" type="TileMapLayer" parent="TilemapCollection"]
+tile_set = SubResource("TileSet_2157r")
+
+[node name="MiscLayer" type="TileMapLayer" parent="TilemapCollection"]
+
+[node name="Player" parent="." instance=ExtResource("3_bqynb")]
+position = Vector2(-18, 42)
+
+[node name="QuakeSpawner" type="Node" parent="."]
+script = ExtResource("4_4u611")
+debris_scene = ExtResource("5_3bxm0")
+
+[node name="Timer" type="Timer" parent="QuakeSpawner"]
+
+[node name="Table" parent="." instance=ExtResource("6_f286b")]
+position = Vector2(38, 28)
+
+[node name="Exit Door" parent="." instance=ExtResource("7_6fscc")]
+position = Vector2(153, 39)
+
+[node name="PottedPlant" parent="." instance=ExtResource("8_qmq3x")]
+position = Vector2(-126, 12)
+
+[node name="Picture" parent="." instance=ExtResource("9_4hy2w")]
+position = Vector2(-65, 13)
+
+[node name="FallTrigger" parent="." instance=ExtResource("10_b5b3k")]
+position = Vector2(-126, 50)
+
+[node name="FallTrigger2" parent="." instance=ExtResource("10_b5b3k")]
+position = Vector2(-65, 50)
+
+[node name="Shelf" parent="." instance=ExtResource("11_d44tt")]
+position = Vector2(-126, 22)
+
+[connection signal="body_entered" from="FallTrigger" to="PottedPlant" method="fall"]
+[connection signal="body_entered" from="FallTrigger2" to="Picture" method="fall"]
