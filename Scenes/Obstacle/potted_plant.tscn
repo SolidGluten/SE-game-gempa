@@ -5,11 +5,11 @@
 [ext_resource type="Script" uid="uid://be33qm5lj3qy2" path="res://Scripts/Hurtable/Debris.gd" id="3_g4u4t"]
 [ext_resource type="PackedScene" uid="uid://cw1sm00yjd4aq" path="res://Scenes/Particles/pot_particle.tscn" id="4_3ddtn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y05t"]
-size = Vector2(14, 14)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ddtn"]
 size = Vector2(10, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y05t"]
+size = Vector2(14, 14)
 
 [node name="PottedPlant" type="RigidBody2D" groups=["debris"]]
 z_index = 3
@@ -19,6 +19,9 @@ script = ExtResource("1_g4u4t")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_g4u4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3ddtn")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 3
@@ -30,6 +33,3 @@ particle_effect = ExtResource("4_3ddtn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_1y05t")
 debug_color = Color(0.998373, 0, 0.143688, 0.42)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_3ddtn")

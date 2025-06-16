@@ -33,8 +33,6 @@ func _ready():
 
 func _process(delta: float) -> void:
 
-	print(spawn_timer)
-
 	# spawn quake
 	if is_quake_active == false:
 		if spawn_timer > 0:

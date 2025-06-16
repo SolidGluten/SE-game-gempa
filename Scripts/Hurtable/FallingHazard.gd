@@ -12,3 +12,4 @@ func fall(body: Node2D) -> void:
     gravity_scale = fall_gravity
     if camera:
         (camera as ScreenShake).start_shake(5.0, 1.0)
+

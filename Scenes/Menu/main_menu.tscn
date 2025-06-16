@@ -116,6 +116,7 @@ theme_override_fonts/font = ExtResource("2_7jtkx")
 theme_override_font_sizes/font_size = 48
 text = "Level 2"
 script = ExtResource("1_bkwd7")
+level_path = "res://Scenes/Level/level2.tscn"
 
 [node name="Button3" type="Button" parent="GridContainer"]
 layout_mode = 2
@@ -125,6 +126,7 @@ theme_override_font_sizes/font_size = 48
 text = "Level 3"
 icon_alignment = 1
 script = ExtResource("1_bkwd7")
+level_path = "res://Scenes/Level/level3.tscn"
 
 [node name="Button4" type="Button" parent="GridContainer"]
 layout_mode = 2

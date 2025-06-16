@@ -3,12 +3,20 @@ extends Hurtable
 
 @export var enable_life_time: bool = true
 @export var life_time: float = 2.0
+@export var invicible_time: float = 0.5
 @export var particle_effect: PackedScene
+
+var is_invicible: bool = false
 
 func _process(delta: float) -> void:
 	if not enable_life_time:
 		return
+
+	if invicible_time > 0:
+		invicible_time -= delta
 	
+	is_invicible = invicible_time > 0
+
 	life_time -= delta
 	if life_time <= 0:
 		self.get_parent().queue_free()
@@ -28,7 +36,7 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, 
 		var tile_coord = tilemap.get_coords_for_body_rid(body_rid)
 		var tile_data = tilemap.get_cell_tile_data(tile_coord)
 
-		if tile_data.get_custom_data("is_floor"):
+		if tile_data.get_custom_data("is_floor") and not is_invicible:
 			self.get_parent().queue_free()
 
 func _exit_tree() -> void:

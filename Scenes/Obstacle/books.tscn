@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc7t3idmqkmbc"]
+[gd_scene load_steps=7 format=3 uid="uid://dc7t3idmqkmbc"]
 
 [ext_resource type="Script" uid="uid://dfb6fsswpp4k2" path="res://Scripts/Hurtable/FallingHazard.gd" id="1_0gvqx"]
 [ext_resource type="Texture2D" uid="uid://cl1102bvee06v" path="res://Sprites/furnitures/books.png" id="2_0gvqx"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y05t"]
 size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gvqx"]
+size = Vector2(14, 14)
 
 [node name="Books" type="RigidBody2D" groups=["debris"]]
 z_index = 3
@@ -27,3 +30,6 @@ particle_effect = ExtResource("4_8dxlb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_1y05t")
 debug_color = Color(0.998373, 0, 0.143688, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0gvqx")
