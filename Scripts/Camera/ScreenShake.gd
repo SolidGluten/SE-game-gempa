@@ -10,7 +10,7 @@ var current_impact: float
 var shake_timer: float
 
 func _process(delta: float) -> void:
-	if shake_timer > 0:
+	if shake_timer > 0 and gameManager.current_state == GameManager.GameState.PLAYING:
 		shake_timer -= delta
 
 		var t = shake_timer / shake_duration

@@ -5,10 +5,10 @@ extends Interactable
 @export var uiManager: UImanager
 
 func interact() -> void:
-	if not playerInventory.has_key:
-		# printerr("You need a key to exit this level.")
+	if playerInventory.has_key:
 		uiManager.enable_win_screen(next_level_path)
-		return
+	else:
+		printerr("You need a key to exit this level.")
 
 	# if next_level_path: levelManager.load_level(next_level_path)
 	# else: printerr("Level path not assigned.")

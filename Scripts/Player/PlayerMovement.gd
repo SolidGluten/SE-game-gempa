@@ -30,7 +30,8 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * current_speed
-		is_facing_right = direction > 0
+		if gameManager.current_state == GameManager.GameState.PLAYING:
+			is_facing_right = direction > 0
 		animated_sprite.flip_h = !is_facing_right
 		play_walk_anim()
 	else:

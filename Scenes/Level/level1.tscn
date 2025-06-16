@@ -170,9 +170,10 @@ position = Vector2(440, 28)
 [node name="Table4" parent="." instance=ExtResource("7_v2ff1")]
 position = Vector2(682, 28)
 
-[node name="Exit Door" parent="." instance=ExtResource("8_hw5ja")]
+[node name="Exit Door" parent="." node_paths=PackedStringArray("uiManager") instance=ExtResource("8_hw5ja")]
 position = Vector2(800, 39)
 next_level_path = "res://Scenes/Level/level2.tscn"
+uiManager = NodePath("../CanvasLayer/Main UI")
 
 [node name="PottedPlant" parent="." instance=ExtResource("9_yxfmr")]
 position = Vector2(-87, 12)

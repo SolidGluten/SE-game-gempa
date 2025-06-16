@@ -14,6 +14,7 @@ var current_health = 2
 var heart_list: Array[TextureRect] = []
 
 func _ready() -> void:
+	gameManager.set_game_state(GameManager.GameState.PLAYING)
 	playerHealth.health_changed.connect(self.sync_health_UI)
 	playerHealth.dead.connect(self.enable_death_screen)
 
@@ -45,7 +46,9 @@ func _exit_tree() -> void:
 
 func enable_death_screen() -> void:
 	death_screen.visible = true
+	gameManager.set_game_state(GameManager.GameState.DEAD)
 
 func enable_win_screen(next_level_path: String) -> void:
 	win_screen.visible = true
 	win_screen.level_path = next_level_path
+	gameManager.set_game_state(GameManager.GameState.WIN)
