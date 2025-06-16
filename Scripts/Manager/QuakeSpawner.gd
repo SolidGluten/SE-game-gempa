@@ -22,6 +22,8 @@ var spawn_timer: float = 0.0
 signal quake_started
 signal quake_ended
 
+var is_quake_active: bool = false
+
 func _ready():
 	quake_timer = quake_duration
 	spawn_timer = get_random_time()
@@ -37,6 +39,7 @@ func _process(delta: float) -> void:
 		# print("Spawn Timer: ", spawn_timer)
 	else:
 		emit_signal("quake_started")
+		is_quake_active = true
 		start_spawn_timer() 
 		spawn_timer = get_random_time()
 	
@@ -46,6 +49,7 @@ func _process(delta: float) -> void:
 	
 	if quake_timer <= 0:
 		emit_signal("quake_ended")
+		is_quake_active = false
 		quake_timer = quake_duration
 		timer.stop()
 
