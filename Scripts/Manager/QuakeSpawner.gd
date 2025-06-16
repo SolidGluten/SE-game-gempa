@@ -17,7 +17,7 @@ var spawn_timer: float = 0.0
 @onready var camera:ScreenShake = get_viewport().get_camera_2d()
 
 @export var show_alert_time: float = 2.0
-@export var show_alert:bool = false
+@export var show_alert: bool = false
 
 signal quake_started
 signal quake_ended
@@ -32,19 +32,23 @@ func _ready():
 	timer.timeout.connect(spawn_debris)
 
 func _process(delta: float) -> void:
+
+	print(spawn_timer)
+
 	# spawn quake
-	if spawn_timer > 0:
-		spawn_timer -= delta
-		show_alert = spawn_timer <= show_alert_time
-		# print("Spawn Timer: ", spawn_timer)
-	else:
-		emit_signal("quake_started")
-		is_quake_active = true
-		start_spawn_timer() 
-		spawn_timer = get_random_time()
+	if is_quake_active == false:
+		if spawn_timer > 0:
+			spawn_timer -= delta
+			show_alert = spawn_timer <= show_alert_time
+			# print("Spawn Timer: ", spawn_timer)
+		elif spawn_timer <= 0:
+			emit_signal("quake_started")
+			start_spawn_timer() 
+			spawn_timer = get_random_time()
 	
 	# track quake duration
 	if quake_timer > 0 and !timer.is_stopped():
+		is_quake_active = true
 		quake_timer -= delta
 	
 	if quake_timer <= 0:

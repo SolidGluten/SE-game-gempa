@@ -4,8 +4,8 @@ extends Node
 const heart_full_path = "res://Sprites/heart/heart_full.png"
 const heart_empty_path = "res://Sprites/heart/heart_empty.png"
 
-@onready var death_screen = $DeathScreen
-@onready var win_screen = $WinScreen
+@onready var death_screen: DeathScreen = $DeathScreen
+@onready var win_screen: WinScreen = $WinScreen
 @onready var alert_icon = $AlertIcon
 @export var quack_spawner: Node = null
 
@@ -46,5 +46,6 @@ func _exit_tree() -> void:
 func enable_death_screen() -> void:
 	death_screen.visible = true
 
-func enable_win_screen() -> void:
+func enable_win_screen(next_level_path: String) -> void:
 	win_screen.visible = true
+	win_screen.level_path = next_level_path
