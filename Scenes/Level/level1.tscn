@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://csysu1pp0dl3b"]
+[gd_scene load_steps=19 format=4 uid="uid://csysu1pp0dl3b"]
 
 [ext_resource type="PackedScene" uid="uid://dcxgxf8qeioqg" path="res://Scenes/UI/UI.tscn" id="1_levbf"]
 [ext_resource type="Texture2D" uid="uid://dciboji3vtvym" path="res://Sprites/LivingRoom.png" id="2_1343e"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://did8opg8q8agh" path="res://Scenes/Obstacle/fall_trigger.tscn" id="11_8g7ex"]
 [ext_resource type="PackedScene" uid="uid://b6wxrbcrl3yfv" path="res://Scenes/Furniture/shelf.tscn" id="12_ov6y5"]
 [ext_resource type="PackedScene" uid="uid://du07ki0ccyrnj" path="res://Scenes/key.tscn" id="13_1lxpi"]
+[ext_resource type="PackedScene" uid="uid://b0bwfdohf51gj" path="res://Scenes/scene_tracker.tscn" id="14_s4nrs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbbtj"]
 texture = ExtResource("2_1343e")
@@ -201,6 +202,8 @@ position = Vector2(564, 22)
 
 [node name="Key" parent="." instance=ExtResource("13_1lxpi")]
 position = Vector2(342, 47)
+
+[node name="SceneTracker" parent="." instance=ExtResource("14_s4nrs")]
 
 [connection signal="body_entered" from="FallTrigger" to="PottedPlant" method="fall"]
 [connection signal="body_entered" from="FallTrigger2" to="Picture" method="fall"]

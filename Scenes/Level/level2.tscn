@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bptn31slwl3xo"]
+[gd_scene load_steps=21 format=4 uid="uid://bptn31slwl3xo"]
 
 [ext_resource type="PackedScene" uid="uid://dcxgxf8qeioqg" path="res://Scenes/UI/UI.tscn" id="1_ttejv"]
 [ext_resource type="Texture2D" uid="uid://dciboji3vtvym" path="res://Sprites/LivingRoom.png" id="2_ctlrs"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dc7t3idmqkmbc" path="res://Scenes/Obstacle/books.tscn" id="12_81drk"]
 [ext_resource type="PackedScene" uid="uid://b6wxrbcrl3yfv" path="res://Scenes/Furniture/shelf.tscn" id="12_yq1sg"]
 [ext_resource type="PackedScene" uid="uid://du07ki0ccyrnj" path="res://Scenes/key.tscn" id="13_npi0p"]
+[ext_resource type="PackedScene" uid="uid://b0bwfdohf51gj" path="res://Scenes/scene_tracker.tscn" id="15_f3x5n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_81drk"]
 texture = ExtResource("3_81drk")
@@ -206,7 +207,7 @@ position = Vector2(-195, -116)
 
 [node name="Exit Door" parent="." node_paths=PackedStringArray("uiManager") instance=ExtResource("8_npi0p")]
 position = Vector2(-329, 39)
-next_level_path = "res://Scenesw/Level/level3.tscn"
+next_level_path = "res://Scenes/Level/level3.tscn"
 uiManager = NodePath("../CanvasLayer/Main UI")
 
 [node name="Picture" parent="." instance=ExtResource("10_f3x5n")]
@@ -241,6 +242,8 @@ position = Vector2(2, -97)
 
 [node name="Shelf2" parent="." instance=ExtResource("12_yq1sg")]
 position = Vector2(2, -125)
+
+[node name="SceneTracker" parent="." instance=ExtResource("15_f3x5n")]
 
 [connection signal="body_entered" from="FallTrigger2" to="Picture" method="fall"]
 [connection signal="body_entered" from="FallTrigger4" to="Picture2" method="fall"]
